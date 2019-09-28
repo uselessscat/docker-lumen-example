@@ -1,3 +1,6 @@
-FROM php:7.3-cli-buster
+FROM php:7.3-fpm-buster
 
-CMD php -S 0.0.0.0:8000 -t /src/public
+# install dependencies
+RUN apt-get update \
+    && apt-get install -y libpq-dev \
+    && docker-php-ext-install -j$(nproc) pdo pdo_pgsql
