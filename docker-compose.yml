@@ -52,13 +52,13 @@ services:
         aliases:
           - pgadmin
     ports:
-      - 7355:80
+      - 81:80
     depends_on:
       - postgres
   swagger:
     image: swaggerapi/swagger-ui
     ports:
-      - 7354:8080
+      - 82:8080
     volumes:
       - ./docs/swagger:/usr/share/nginx/html/definitions
     environment:
