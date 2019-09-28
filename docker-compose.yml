@@ -40,5 +40,30 @@ services:
       default:
         aliases:
           - db
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "user@domain.com"
+      PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
+    volumes:
+      - ./configs/servers.json:/pgadmin4/servers.json
+    networks:
+      default:
+        aliases:
+          - pgadmin
+    ports:
+      - 7355:80
+    depends_on:
+      - postgres
+  swagger:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 7354:8080
+    volumes:
+      - ./docs/swagger:/usr/share/nginx/html/definitions
+    environment:
+      API_URL: definitions/swagger.yml
+    depends_on: 
+      - php
 networks:
   default:
