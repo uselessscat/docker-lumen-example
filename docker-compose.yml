@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  php:
+    build:
+      context: .
+    volumes:
+      - ./src:/src
+    ports:
+      - 8000:8000
