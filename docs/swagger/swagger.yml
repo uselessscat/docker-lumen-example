@@ -1,0 +1,17 @@
+openapi: '3.0.2'
+info:
+  title: Example
+  version: '1.0'
+servers:
+  - url: https://localhost/
+tags:
+  - name: Server info
+    description: Server information endpoints
+paths:
+  /:
+    get:
+      tags:
+        - Server info
+      responses:
+        '200':
+          description: Lumen version
