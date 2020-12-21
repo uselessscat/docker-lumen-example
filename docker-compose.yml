@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 services:
   nginx:
     image: nginx:stable
@@ -28,7 +28,7 @@ services:
     depends_on:
       - postgres
   postgres:
-    image: postgres:12
+    image: postgres:13
     restart: always
     environment:
       POSTGRES_DB: example
@@ -46,7 +46,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: "user@domain.com"
       PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
     volumes:
-      - ./configs/servers.json:/pgadmin4/servers.json
+      - ${PWD}/configs/servers.json:/pgadmin4/servers.json
     networks:
       default:
         aliases:

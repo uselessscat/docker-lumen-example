@@ -1,9 +1,9 @@
-openapi: '3.0.2'
+openapi: '3.0.3'
 info:
-  title: Example
+  title: Lumen Example
   version: '1.0'
 servers:
-  - url: https://localhost/
+  - url: http://localhost/
 tags:
   - name: Server info
     description: Server information endpoints
