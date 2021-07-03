@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 services:
   nginx:
     image: nginx:stable
@@ -20,7 +20,6 @@ services:
       dockerfile: dockerfile
     volumes:
       - ./src:/src
-    working_dir: /src
     networks:
       default:
         aliases:
