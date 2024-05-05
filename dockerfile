@@ -6,7 +6,7 @@ COPY /src /app
 RUN composer install
 
 # build the app container
-FROM php:8.0-fpm-buster
+FROM php:8.3-fpm-bookworm
 
 # install dependencies
 RUN apt-get update \
